@@ -1,0 +1,226 @@
+### This material is from Python Programming MOOC 2023 https://programming-23.mooc.fi/ ### 
+
+
+# Nomenklatur
+indentation - odsadenie
+sum = súčet
+mean = aritmet. priemer
+
+# Arithmetic operations               
+| Operator | Purpose                        | Example      | Result   |
+|----------|--------------------------------|--------------|----------|
+| +        | Addition                       | 2 + 4        | 6        |
+| -        | Subtraction                    | 10 - 2.5     | 7.5      |
+| *        | Multiplication                 | -2 * 123     | -246     |
+| /        | Division (floating point)      | 9 / 2        | 4.5      |
+| //       | Division (integer)             | 9 // 2       | 4        |
+| %        | Modulo                         | 9 % 2        | 1        |
+| **       | Exponentiation                 | 2 ** 3       | 8        |
+
+A string can be converted into an integer with the function int.
+String can be converted into a floating point number with the function float.
+
+input_str = input("Which year were you born? ")
+year = int(input_str)
+
+number1 = int(input("First number: "))
+                
+
+# Comparison operators
+
+| Operator | Purpose                       | Example    |
+|----------|-------------------------------|------------|
+| ==       | Equal to                      | a == b     |
+| != (! =) | Not equal to                  | a != b     |
+| >        | Greater than                  | a > b      |
+| >=       | Greater than or equal to      | a >= b     |
+| <        | Less than                     | a < b      |
+| <=       | Less than or equal to         | a <= b     |
+
+## Examples
+number = int(input("Please type in a number: "))
+
+if number < 0:
+    print(f"The absolute value of this number is {number*-1} ")
+
+if number > 0:
+    print(f"The absolute value of this number is {number}")
+
+if number == 0:
+    print(f"The absolute value of this number is {number}")
+
+
+# Boolean values and Boolean expressions
+Variables of type bool can only have two values: True or False.
+
+The elif keyword in Python stands for "else if" and is used to check multiple conditions in sequence, following an initial if statement. It allows you to add additional conditional checks if the previous if condition is not met.
+
+
+# Python math module
+In Python, the math module provides a set of mathematical functions and constants that are useful for performing a wide range of mathematical operations. This module must be imported before you can use its functions.
+
+## Key Features of the math Module 
+Basic Mathematical Functions:
+math.sqrt(x): Returns the square root of x.
+math.pow(x, y): Returns x raised to the power of y.
+math.factorial(x): Returns the factorial of x (x!).
+math.log(x[, base]): Returns the logarithm of x to the specified base (default is e).
+
+Trigonometric Functions:
+math.sin(x): Returns the sine of x (x is in radians).
+math.cos(x): Returns the cosine of x.
+math.tan(x): Returns the tangent of x.
+
+Constants:
+math.pi: The mathematical constant π (pi), approximately equal to 3.14159.
+math.e: The base of natural logarithms, approximately equal to 2.71828.
+
+# Expression
+
++-----------------+--------+-----------------------+------------------+
+|   Expression    | Value  |         Type           | Python data type|
++-----------------+--------+-----------------------+------------------+
+|  2 + 4 + 3      |   9    | integer               | int              |
+|  "abc" + "de"   | "abcde"| string                | str              |
+|  11 / 2         |  5.5   | floating point number | float            |
+|  2 * 5 > 9      |  True  | Boolean value         | bool             |
++-----------------+--------+-----------------------+------------------+
+
+# Function
+
+The problem here is mathematical in nature: division by zero is not allowed, and this halts the execution of the program.
+
+You can use the function type to find out the data type of any expression. An example of its use:
+
+print(type("Anna"))
+print(type(100))
+
+Sample output
+<class 'str'>
+<class 'int'>
+
+The function len can be used to find out the length of a string, among other things. The function returns the number of characters in a string.
+
+
+When programming in Python, often we need to change the data type of a value. For example, a floating point number can be converted into an integer with the function int:
+
+temperature = float(input("Please type in a temperature: "))
+
+print("The temperature is", temperature)
+
+print("...and rounded down it is", int(temperature))
+
+output:
+Please type in a temperature: 5.15
+The temperature is 5.15
+...and rounded down it is 5
+
+# Logical operators
+
+The following truth table contains the behaviour of these operators in different situations:
+
+                +-------+-------+------------+----------+
+                |   a   |   b   |   a and b  |  a or b  |
+                +-------+-------+------------+----------+
+                | False | False |   False    |  False   |
+                +-------+-------+------------+----------+
+                |  True | False |   False    |   True   |
+                +-------+-------+------------+----------+
+                | False |  True |   False    |   True   |
+                +-------+-------+------------+----------+
+                |  True |  True |    True    |   True   |
+                +-------+-------+------------+----------+
+
+Sometimes it is necessary to know if something is not true. The operator not negates a condition:
+                            +-------+-------+
+                            |   a   |  not a |
+                            +-------+-------+
+                            |  True |  False |
+                            +-------+-------+
+                            | False |  True  |
+                            +-------+-------+
+
+Especially in programming, logical operators are often called Boolean operators.
+
+Simplified combined conditions
+The condition x >= a and x <= b is a very common way of checking whether the number x falls within the range of a to b. An expression with this structure works the same way in most programming languages.
+
+Python also allows a simplified notation for combining conditions: a <= x <= b achieves the same result as the longer version using and. This shorter notation might be more familiar from mathematics, but it is not very widely used in Python programming, possibly because very few other programming languages have a similar shorthand.
+
+# Nested conditionals
+
+number = int(input("Please type in a number: "))
+
+if number > 0:
+    if number % 2 == 0:
+        print("The number is even")
+    else:
+        print("The number is odd")
+else:
+    print("The number is negative or zero")
+
+
+# Simple loops (repetition, or iteration)
+Together these form the fundamental control structures any programmer must master. They are called control structures because essentially they allow you to control which lines of code get executed when. While conditional structures allow you to choose between sections of code, iteration structures allow you to repeat sections of code. They are often called loops because they allow the program to "loop back" to some line that was already executed before. The process of executing one repetition of a loop is also referred to as an iteration of the loop.
+
+while True:
+    number = int(input("Please type in a number, -1 to quit: "))
+
+    if number == -1:
+        break
+
+    print(number ** 2)
+
+print("Thanks and bye!")
+Running the program could look like this:
+
+Sample output
+Please type in a number, -1 to quit: 2
+4
+Please type in a number, -1 to quit: 4
+16
+Please type in a number, -1 to quit: 10
+100
+Please type in a number, -1 to quit: -1
+Thanks and bye!
+
+As you can see above, the program asks for several numbers, thanks to the while statement in the program. When the user types in -1, the break command is executed, which exits the loop and execution continues from the first line after the while block.
+
+
+This program should print out a countdown. The code is as follows:
+
+number = 5
+print("Countdown!")
+while True:
+  print(number)
+  number = number - 1
+  if number == 0:
+    break
+    
+print("Now!")
+
+
+Sample output
+Countdown!
+5
+4
+3
+2
+1
+Now!
+
+
+
+# Loops and helper variables
+The program uses two helper variables. The variable attempts keeps track of how many times the user has typed in a PIN. The variable success is set to either True or False based on whether the user is successful in signing in.
+
+# Debugging tips
+Besides print statements, there are many other tools that can be used for debugging. One of these is the visualisation tool on the Python Tutor website. The tool allows you to execute your code line by line, and also shows you the values stored in variables at each step.
+
+https://pythontutor.com/visualize.html#mode=edit
+https://pythontutor.com/    
+
+![Debugging](image.png)
+The red arrow points to where the execution of the program is at the moment. The tool displays what has been printed out so far, and also shows the value each variable has at each step. The execution moves forward line by line as you press Next.
+
+
